@@ -1,0 +1,21 @@
+{
+  "name": "aklump/git-ignore-pattern-matcher",
+  "description": "Lightweight PHP class to match gitignore style patterns.",
+  "homepage": "https://github.com/aklump/git-ignore-pattern-matcher",
+  "authors": [
+    {
+      "name": "Aaron Klump",
+      "homepage": "http://www.intheloftstudios.com",
+      "role": "Lead Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "AKlump\\GitIgnorePatternMatcher\\": "src/",
+      "AKlump\\GitIgnorePatternMatcher\\Tests\\": "tests_unit/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  }
+}
