@@ -1,20 +1,48 @@
 <?php
 
-namespace AKlump\GitIgnorePatternMatcher\Tests;
+namespace AKlump\GitIgnore\Tests;
 
 class PatternDataProvider {
 
   public static function getData(): array {
     $tests = [];
     $tests[] = [
+      '**/node_modules/.bin/*',
+      '../../web/sites/default/themes/custom/og2_theme/node_modules/.bin/sass',
+      TRUE,
+    ];
+    $tests[] = [
+      '../../web/sites/default/**/node_modules/.bin/*',
+      '../../web/sites/default/themes/custom/og2_theme/node_modules/.bin/sass',
+      TRUE,
+    ];
+    $tests[] = [
+      // based on Bash `ls app/*` does not return app/.
+      'app/**',
+      'app/',
+      FALSE,
+    ];
+    $tests[] = [
+      // based on Bash `ls app/*` does not return app/.
+      'app/**',
+      'app',
+      FALSE,
+    ];
+    $tests[] = [
+      // based on Bash `ls files/*` does not return files/.
+      '/Users/aklump/Code/Packages/bash/easy-perms/tests_unit/files/*',
+      '/Users/aklump/Code/Packages/bash/easy-perms/tests_unit/files/',
+      FALSE,
+    ];
+    $tests[] = [
       '/foo/bar/baz/tests_unit/files/*_dir',
       '/foo/bar/baz/tests_unit/files/lorem_dir',
-      true,
+      TRUE,
     ];
     $tests[] = [
       '/foo/bar/baz/tests_unit/files/*_dir',
       '/foo/bar/baz/tests_unit/files/lorem_dir/',
-      true,
+      TRUE,
     ];
     $tests[] = [
       'abc/**/',

@@ -1,7 +1,7 @@
 {
-  "name": "aklump/git-ignore-pattern-matcher",
-  "description": "Lightweight PHP class to match gitignore style patterns.",
-  "homepage": "https://github.com/aklump/git-ignore-pattern-matcher",
+  "name": "aklump/gitignore",
+  "description": "Small library for matching gitignore style (glob) patterns.",
+  "homepage": "https://github.com/aklump/gitignore",
   "authors": [
     {
       "name": "Aaron Klump",
@@ -11,8 +11,8 @@
   ],
   "autoload": {
     "psr-4": {
-      "AKlump\\GitIgnorePatternMatcher\\": "src/",
-      "AKlump\\GitIgnorePatternMatcher\\Tests\\": "tests_unit/"
+      "AKlump\\GitIgnore\\": "src/",
+      "AKlump\\GitIgnore\\Tests\\": "tests_unit/"
     }
   },
   "require-dev": {

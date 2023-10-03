@@ -1,8 +1,8 @@
 <?php
 
-namespace AKlump\GitIgnorePatternMatcher;
+namespace AKlump\GitIgnore;
 
-class StringAnalyzer {
+class Analyzer {
 
   /**
    * Test a string to see if it contains any unmatched pattern bits.
@@ -11,7 +11,7 @@ class StringAnalyzer {
    *
    * @return bool
    */
-  public static function containsUnmatchedPatterns(string $string): bool {
+  public static function containsPattern(string $string): bool {
     $regex = (new PatternToRegex())($string);
     $delimiter = substr($regex, 0, 1);
 

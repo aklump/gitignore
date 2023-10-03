@@ -9,14 +9,14 @@ use PHPUnit\Framework\TestCase;
 /**
  * @covers \AKlump\GitIgnore\Pattern
  */
-class PatternToRegexTest extends TestCase {
+class PatternTest extends TestCase {
 
   /**
    * @dataProvider \AKlump\GitIgnore\Tests\PatternDataProvider::getData
    */
-  public function testInvoke(string $pattern, string $string, bool $expected) {
-    $regex = (new PatternToRegex())($pattern);
-    $this->assertSame($expected, (bool) preg_match($regex, $string));
+  public function testMatches(string $pattern, string $string, bool $expected) {
+    $pattern = new Pattern($pattern);
+    $this->assertSame($expected, $pattern->matches($string));
   }
 
 }

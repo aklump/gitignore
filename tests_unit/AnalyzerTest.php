@@ -1,14 +1,14 @@
 <?php
 
-namespace AKlump\GitIgnorePatternMatcher\Tests;
+namespace AKlump\GitIgnore\Tests;
 
-use AKlump\GitIgnorePatternMatcher\StringAnalyzer;
+use AKlump\GitIgnore\Analyzer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \AKlump\GitIgnorePatternMatcher\StringAnalyzer
+ * @covers \AKlump\GitIgnore\Analyzer
  */
-class StringAnalyzerTest extends TestCase {
+class AnalyzerTest extends TestCase {
 
   public function dataFortestPathContainsPatternProvider() {
     $tests = [];
@@ -48,11 +48,11 @@ class StringAnalyzerTest extends TestCase {
    * @dataProvider dataFortestPathContainsPatternProvider
    */
   public function testContainsUnmatchedPatterns(string $path, bool $expected) {
-    $this->assertSame($expected, StringAnalyzer::containsUnmatchedPatterns($path));
+    $this->assertSame($expected, Analyzer::containsPattern($path));
   }
 
   /**
-   * @dataProvider \AKlump\GitIgnorePatternMatcher\Tests\PatternDataProvider::getData
+   * @dataProvider \AKlump\GitIgnore\Tests\PatternDataProvider::getData
    */
   public function testContainsUnmatchedPatternsUsingPatternDataProvider(string $path) {
     $expect = TRUE;
@@ -62,7 +62,7 @@ class StringAnalyzerTest extends TestCase {
     if (in_array($path, ['lorem/', 'lorem.txt'])) {
       $expect = FALSE;
     }
-    $result = StringAnalyzer::containsUnmatchedPatterns($path);
+    $result = Analyzer::containsPattern($path);
     $this->assertSame($expect, $result);
   }
 

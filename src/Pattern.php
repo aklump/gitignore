@@ -1,6 +1,6 @@
 <?php
 
-namespace AKlump\GitIgnorePatternMatcher;
+namespace AKlump\GitIgnore;
 
 /**
  * @url https://git-scm.com/docs/gitignore#_pattern_format
@@ -9,7 +9,7 @@ namespace AKlump\GitIgnorePatternMatcher;
  * "?" matches any one character except "/".
  * [a-zA-Z], can be used to match one of the characters in a range.
  */
-class StringMatcher {
+class Pattern {
 
   private string $pattern;
 
