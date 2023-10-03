@@ -7,6 +7,16 @@ class PatternDataProvider {
   public static function getData(): array {
     $tests = [];
     $tests[] = [
+      '/foo/bar/baz/tests_unit/files/*_dir',
+      '/foo/bar/baz/tests_unit/files/lorem_dir',
+      true,
+    ];
+    $tests[] = [
+      '/foo/bar/baz/tests_unit/files/*_dir',
+      '/foo/bar/baz/tests_unit/files/lorem_dir/',
+      true,
+    ];
+    $tests[] = [
       'abc/**/',
       'abc/dir/file.txt',
       FALSE,

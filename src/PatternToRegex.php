@@ -31,7 +31,8 @@ class PatternToRegex {
     if (substr($regex, 0, 2) === '\!') {
       $regex = '(?!' . substr($regex, 2) . ').*';
     }
-    $regex = "$delimiter^$regex\$$delimiter";
+    $regex = "^$regex/?\$";
+    $regex = $delimiter . $regex . $delimiter;
 
     return $regex;
   }
