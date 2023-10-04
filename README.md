@@ -12,7 +12,7 @@ $pattern->matches('foo/bar/baz/lorem.php') === TRUE;
 ## Convert to RegEx
 
 ```php
-$pattern = new Pattern('settings*.php');
+$pattern = new \AKlump\GitIgnore\Pattern('settings*.php');
 $pattern->toRegex() === '#^settings[^/]*\.php/?$#';
 ```
 
