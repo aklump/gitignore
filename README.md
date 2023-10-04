@@ -5,7 +5,7 @@ A small library to allow you to work with [.gitignore (glob) patterns](https://g
 ## Test a .gitignore pattern
 
 ```php
-$pattern = new Pattern('foo/**/*.php');
+$pattern = new \AKlump\GitIgnore\Pattern('foo/**/*.php');
 $pattern->matches('foo/bar/baz/lorem.php') === TRUE;
 ```
 
@@ -13,19 +13,19 @@ $pattern->matches('foo/bar/baz/lorem.php') === TRUE;
 
 ```php
 // Static method pattern
-$regex = PatternToRegex::convert('foo/**/*.php');
+$regex = \AKlump\GitIgnore\PatternToRegex::convert('foo/**/*.php');
 $regex === '#^foo/.+/[^/]*\.php/?$#';
 
 // Invocable class pattern
-$regex = (new PatternToRegex())('foo/**/*.php');
+$regex = (new \AKlump\GitIgnore\PatternToRegex())('foo/**/*.php');
 $regex === '#^foo/.+/[^/]*\.php/?$#';
 ```
 
 ## Check If String Contains a Pattern
 
 ```php
-Analyzer::containsPattern('foo/**') === TRUE
-Analyzer::containsPattern('foo/bar') === FALSE
+\AKlump\GitIgnore\Analyzer::containsPattern('foo/**') === TRUE
+\AKlump\GitIgnore\Analyzer::containsPattern('foo/bar') === FALSE
 ```
 
 ## Known Issues
