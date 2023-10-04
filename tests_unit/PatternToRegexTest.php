@@ -11,6 +11,11 @@ use PHPUnit\Framework\TestCase;
  */
 class PatternToRegexTest extends TestCase {
 
+  public function testToRegexMethodReturnsAsExpected() {
+    $pattern = new Pattern('settings*.php');
+    $this->assertSame('#^settings[^/]*\.php/?$#', $pattern->toRegex());
+  }
+
   /**
    * @dataProvider \AKlump\GitIgnore\Tests\PatternDataProvider::getData
    */

@@ -40,4 +40,12 @@ class Pattern {
     return $result;
   }
 
+  public function toRegex(): string {
+    return (new PatternToRegex())($this);
+  }
+
+  public function __toString(): string {
+    return $this->pattern;
+  }
+
 }

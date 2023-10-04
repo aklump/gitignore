@@ -53,8 +53,4 @@ class PatternToRegex {
     return $regex;
   }
 
-  public static function convert(string $pattern) {
-    return (new self())($pattern);
-  }
-
 }

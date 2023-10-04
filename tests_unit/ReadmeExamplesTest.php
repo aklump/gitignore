@@ -9,9 +9,9 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers README.md
- * @uses \AKlump\GitIgnore\PatternToRegex
- * @uses \AKlump\GitIgnore\Pattern
- * @uses \AKlump\GitIgnore\Analyzer
+ * @uses   \AKlump\GitIgnore\PatternToRegex
+ * @uses   \AKlump\GitIgnore\Pattern
+ * @uses   \AKlump\GitIgnore\Analyzer
  */
 class ReadmeExamplesTest extends TestCase {
 
@@ -22,11 +22,8 @@ class ReadmeExamplesTest extends TestCase {
   }
 
   public function testPatternToRegex() {
-    $regex = (new PatternToRegex())('foo/**/*.php');
-    $this->assertSame('#^foo/.+/[^/]*\.php/?$#', $regex);
-
-    $regex = PatternToRegex::convert('foo/**/*.php');
-    $this->assertSame('#^foo/.+/[^/]*\.php/?$#', $regex);
+    $pattern = new Pattern('settings*.php');
+    $this->assertSame('#^settings[^/]*\.php/?$#', $pattern->toRegex());
   }
 
   public function testContainsPattern() {

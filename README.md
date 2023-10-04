@@ -12,13 +12,8 @@ $pattern->matches('foo/bar/baz/lorem.php') === TRUE;
 ## Convert to RegEx
 
 ```php
-// Static method pattern
-$regex = \AKlump\GitIgnore\PatternToRegex::convert('foo/**/*.php');
-$regex === '#^foo/.+/[^/]*\.php/?$#';
-
-// Invocable class pattern
-$regex = (new \AKlump\GitIgnore\PatternToRegex())('foo/**/*.php');
-$regex === '#^foo/.+/[^/]*\.php/?$#';
+$pattern = new Pattern('settings*.php');
+$pattern->toRegex() === '#^settings[^/]*\.php/?$#';
 ```
 
 ## Check If String Contains a Pattern

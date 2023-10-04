@@ -11,6 +11,11 @@ use PHPUnit\Framework\TestCase;
  */
 class PatternTest extends TestCase {
 
+  public function testToString() {
+    $pattern = new Pattern('/foo/**.sh');
+    $this->assertSame('/foo/**.sh', (string) $pattern);
+  }
+
   /**
    * @dataProvider \AKlump\GitIgnore\Tests\PatternDataProvider::getData
    */
