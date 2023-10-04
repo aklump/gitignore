@@ -25,4 +25,4 @@ $pattern->toRegex() === '#^settings[^/]*\.php/?$#';
 
 ## Known Issues
 
-Not all [special characters](https://pavolkutaj.medium.com/ignore-files-in-gitignore-using-globbing-patterns-4558699bdbf9) are supported and may never be.
+Not all [special characters](https://pavolkutaj.medium.com/ignore-files-in-gitignore-using-globbing-patterns-4558699bdbf9) are yet supported.
