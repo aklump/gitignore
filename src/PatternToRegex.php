@@ -48,9 +48,8 @@ class PatternToRegex {
       $regex = '(?!' . substr($regex, 2) . ').*';
     }
     $regex = "^$regex/?\$";
-    $regex = $delimiter . $regex . $delimiter;
 
-    return $regex;
+    return $delimiter . $regex . $delimiter;
   }
 
 }

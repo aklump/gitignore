@@ -11,9 +11,15 @@ namespace AKlump\GitIgnore;
  */
 class Pattern {
 
-  private string $pattern;
+  /**
+   * @var string
+   */
+  private $pattern;
 
-  private string $regex;
+  /**
+   * @var string
+   */
+  private $regex;
 
   public function __construct(string $pattern) {
     $this->regex = (new PatternToRegex())($pattern);

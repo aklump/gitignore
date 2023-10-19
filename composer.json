@@ -15,7 +15,11 @@
       "AKlump\\GitIgnore\\Tests\\": "tests_unit/"
     }
   },
+  "require": {
+    "php": ">=7.3"
+  },
   "require-dev": {
-    "phpunit/phpunit": "^9.5"
+    "phpunit/phpunit": "^9.5",
+    "aklump/phpswap": "^0.0.7"
   }
 }
