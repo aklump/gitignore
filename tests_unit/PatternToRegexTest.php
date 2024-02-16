@@ -7,7 +7,8 @@ use AKlump\GitIgnore\Pattern;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \AKlump\GitIgnore\Pattern
+ * @covers \AKlump\GitIgnore\PatternToRegex
+ * @uses   \AKlump\GitIgnore\Pattern
  */
 class PatternToRegexTest extends TestCase {
 

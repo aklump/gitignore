@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \AKlump\GitIgnore\Analyzer
+ * @uses \AKlump\GitIgnore\PatternToRegex
  */
 class AnalyzerTest extends TestCase {
 

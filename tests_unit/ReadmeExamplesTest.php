@@ -8,9 +8,8 @@ use AKlump\GitIgnore\PatternToRegex;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers README.md
+ * @covers \AKlump\GitIgnore\Pattern
  * @uses   \AKlump\GitIgnore\PatternToRegex
- * @uses   \AKlump\GitIgnore\Pattern
  * @uses   \AKlump\GitIgnore\Analyzer
  */
 class ReadmeExamplesTest extends TestCase {

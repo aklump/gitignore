@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \AKlump\GitIgnore\Pattern
+ * @uses \AKlump\GitIgnore\PatternToRegex
  */
 class PatternTest extends TestCase {
 

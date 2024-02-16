@@ -1,5 +1,5 @@
 <?php
-
+// SPDX-License-Identifier: BSD-3-Clause
 namespace AKlump\GitIgnore;
 
 /**
@@ -37,6 +37,7 @@ class Pattern {
   public function matches(string $test_string): bool {
     $result = FALSE;
     if (empty($this->regex) || $this->regex === $this->pattern) {
+      // TODO I think this is totally unreachable; remove?
       $result = $test_string === $this->pattern;
     }
     elseif (preg_match($this->regex, $test_string, $matches)) {
